@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * push - pushes an element to the stack
+ * _push - pushes an element to the stack
  * @stack: double pointer
  * @line_number: unsigned int
  */
-void push(stack_t **stack, unsigned int line_number)
+void _push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new;
 
@@ -22,11 +22,11 @@ void push(stack_t **stack, unsigned int line_number)
 	*stack = new;
 }
 /**
- * pall - prints all the values on the stack, starting from the top of the stack
+ * _pall - prints all the values on the stack, starting from the top of the stack
  * @stack: double pointer
  * @line_number: unsigned int
  */
-void pall(stack_t **stack, unsigned int line_number)
+void _pall(stack_t **stack, unsigned int line_number)
 {
 	(void)line_number;
 	stack_t aux = *stack;
@@ -36,4 +36,14 @@ void pall(stack_t **stack, unsigned int line_number)
 		printf("%d\n", aux->n);
 		aux = aux->next;
 	}
+}
+/**
+ * _nop - doesn’t do anything
+ * @stack: double pointer
+ * @line_number: unsigned int
+ */
+void _nop(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
 }
