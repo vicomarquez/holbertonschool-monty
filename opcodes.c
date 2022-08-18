@@ -21,6 +21,7 @@ void _push(stack_t **stack, unsigned int line_number)
 		(*stack)->prev = new;
 	*stack = new;
 }
+
 /**
  * _pall - prints all the values on the stack, starting from the top of the stack
  * @stack: double pointer
@@ -29,7 +30,7 @@ void _push(stack_t **stack, unsigned int line_number)
 void _pall(stack_t **stack, unsigned int line_number)
 {
 	(void)line_number;
-	stack_t aux = *stack;
+	stack_t *aux = *stack;
 
 	while (aux)
 	{
@@ -37,6 +38,25 @@ void _pall(stack_t **stack, unsigned int line_number)
 		aux = aux->next;
 	}
 }
+
+/**
+ * _pint -  prints the value at the top of the stack, followed by a new line
+ * @stack: double pointer
+ * @line_number: unsigned int
+ */
+void _pint(stack_t **stack, unsigned int line_number)
+{
+}
+
+/**
+ * _pop - removes the top element of the stack
+ * @stack: double pointer
+ * @line_number: unsigned int
+ */
+void _pop(stack_t **stack, unsigned int line_number)
+{
+}
+
 /**
  * _nop - doesn’t do anything
  * @stack: double pointer
