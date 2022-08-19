@@ -46,6 +46,12 @@ void _pall(stack_t **stack, unsigned int line_number)
  */
 void _pint(stack_t **stack, unsigned int line_number)
 {
+	if (*head == NULL)
+	{
+		printf(stedrr, "L%u: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	printf("d\n", (*head_ref)->n);
 }
 
 /**
@@ -55,6 +61,17 @@ void _pint(stack_t **stack, unsigned int line_number)
  */
 void _pop(stack_t **stack, unsigned int line_number)
 {
+	stack_t *temp;
+
+	temp = *stack;
+	if (*stack)
+			*stack = (*stack)->next; /*moves to next element*/
+	else
+	{
+		printf(stderr, "L%u: can't pop an empty stack\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	free(temp);
 }
 
 /**
