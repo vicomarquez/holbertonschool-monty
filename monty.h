@@ -1,5 +1,6 @@
 #ifndef MONTY
 #define MONTY
+#include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>
@@ -41,4 +42,5 @@ void _pint(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
 void _swap(stack_t **stack, unsigned int line_number);
 void _add(stack_t **stack, unsigned int line_number);
+void free_list(stack_t *stack);
 #endif

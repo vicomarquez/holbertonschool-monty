@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  * main - monty interpreter
  *
@@ -7,23 +7,23 @@
 int main(int argc, char **argv)
 {
 	FILE *txt;
-	char *line = 0, *head = 0;
-	int buff = 0, i = 0;
+	/*char *line = 0, *head = 0;
+	int buff = 0, i = 0;*/
 
 	if (argc != 2)
 	{
-		dprintf("USAGE: monty file\n");
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 
 	txt = fopen(argv[1], "r");
 	if (!txt)
 	{
-		dprintf("Error: Can't open file txt\n");
+		fprintf(stderr, "Error: Can't open file txt\n");
 		exit(EXIT_FAILURE);
 	}
-	while (getline(&line,&buff,txt)== -1)
+	/*while (getline(&line,&buff,txt)== -1)
 	{
-		
-	}	
+			
+	}*/	
 }

@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  * _push - pushes an element to the stack
  * @stack: double pointer
@@ -7,12 +7,18 @@
 void _push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new;
+	char *integer;
 
-	if (stack == NULL)
-		return (NULL);
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
-		return (NULL);
+	return;
+
+	integer = strtok(NULL, " ");
+	if (integer == NULL)
+	{
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+			exit(EXIT_FAILURE);
+	}
 
 	new->n = line_number;
 	new->next = *stack;
@@ -46,9 +52,9 @@ void _pall(stack_t **stack, unsigned int line_number)
  */
 void _pint(stack_t **stack, unsigned int line_number)
 {
-	if (*head == NULL)
+	if (*stack == NULL)
 	{
-		fprintf(stedrr, "L%u: can't pint, stack empty\n", line_number);
+		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	printf("d\n", (*head_ref)->n);

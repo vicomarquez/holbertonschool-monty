@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  * get_op - matches op with function
  * @stack - 
@@ -17,7 +17,9 @@ void get_op(stack_t **stack, unsigned int line_number)
 		{NULL, NULL}
 	};
 
-	int i;
+/*	int i;
 
 	for (i = 0 ; opp[i].opcode != NULL ; i++)
+		if (opp[i].opcode)*/
+}
 	
