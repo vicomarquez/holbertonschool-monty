@@ -4,7 +4,7 @@
  * @stack - 
  * 
  */
-void get_op(stack_t **stack, unsigned int line_number)
+void get_op(stack_t **stack, unsigned int line_number, char *cmd)
 {
 	instruction_t opp[] = {
 		{"push", _push},
@@ -17,9 +17,13 @@ void get_op(stack_t **stack, unsigned int line_number)
 		{NULL, NULL}
 	};
 
-/*	int i;
+	int i;
 
-	for (i = 0 ; opp[i].opcode != NULL ; i++)
-		if (opp[i].opcode)*/
+	for (i = 0 ; opp[i].f != NULL ; i++)
+		if (strcmp(cmd, opp[i].opcode) == 0)
+		{
+			opp[i].f(stack, line_number);
+			return;
+		}
 }
 	

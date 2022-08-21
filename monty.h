@@ -43,4 +43,5 @@ void _pop(stack_t **stack, unsigned int line_number);
 void _swap(stack_t **stack, unsigned int line_number);
 void _add(stack_t **stack, unsigned int line_number);
 void free_list(stack_t *stack);
+void get_op(stack_t **stack, unsigned int line_number, char *a);
 #endif
