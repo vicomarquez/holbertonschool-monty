@@ -13,7 +13,6 @@ void _swap(stack_t **stack, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 		free_list(*stack);
-		fclose(file);
 		exit(EXIT_FAILURE);
 	}
 	n = (*stack)->n;
@@ -34,7 +33,6 @@ void _add(stack_t **stack, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 		free_list(*stack);
-		fclose(file);
 		exit(EXIT_FAILURE);
 	}
 	stack_temp = *stack;
@@ -43,3 +41,23 @@ void _add(stack_t **stack, unsigned int line_number)
 	(*stack)->prev = NULL;
 	free(stack_temp);
 }
+
+/**
+ * free_list - frees a listi
+ *
+ * @head: pointer to head
+ *
+ * Return: the address of the new element, or NULL if it failed
+ */
+void free_list(stack_t *stack)
+{
+	stack_t *temp;
+
+	while (stack != NULL)
+	{
+		temp = stack;
+		stack = stack->next;
+		free(temp);
+	}
+}
+
