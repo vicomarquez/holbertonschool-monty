@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  * main - monty interpreter
  *
@@ -7,8 +7,11 @@
 int main(int argc, char **argv)
 {
 	FILE *txt;
-	char *line = 0, *head = 0;
-	int buff = 0, i = 0;
+	char *line = NULL, *head = NULL;
+	char buffer[1024];
+	stack_t *stack = NULL;
+	unsigned int numb_line = 0;
+	void (*f)(stack_t **, unsigned int);
 
 	if (argc != 2)
 	{
@@ -22,8 +25,22 @@ int main(int argc, char **argv)
 		dprintf("Error: Can't open file txt\n");
 		exit(EXIT_FAILURE);
 	}
-	while (getline(&line,&buff,txt)== -1)
+	while (fgets(buffer, 1024, txt) == -1)
 	{
-		
-	}	
+		numb_line++;
+		line = strtok(buffer, "\n");
+		if (!Line)
+			continue;
+		head = strtok(line, "\t\r");
+		if (head)
+		{
+			f = get_op(head, numb_line);
+			if (f)
+					f(&stack, numb_line);
+		}
+
+	}
+	free_dlistint(stack);
+	fclose(fp);
+return (0);
 }
