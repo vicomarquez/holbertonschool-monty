@@ -7,8 +7,10 @@
 int main(int argc, char **argv)
 {
 	FILE *txt;
-	/*char *line = 0, *head = 0;
-	int buff = 0, i = 0;*/
+	char *line = 0;
+	int buff = 0, i = 0;
+	int match;
+
 
 	if (argc != 2)
 	{
@@ -22,8 +24,8 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Error: Can't open file txt\n");
 		exit(EXIT_FAILURE);
 	}
-	/*while (getline(&line,&buff,txt)== -1)
+	while (getline(&line,&buff,txt)== -1)
 	{
 			
-	}*/	
+	}
 }
