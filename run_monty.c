@@ -41,6 +41,6 @@ int main(int argc, char **argv)
 
 	}
 	free_dlistint(stack);
-	fclose(fp);
+	fclose(txt);
 return (0);
 }
