@@ -41,6 +41,10 @@ int main(int argc, char **argv)
 	}
 	free_dlistint(stack);
 	fclose(txt);
+<<<<<<< HEAD
 	return (0);
 	}
+=======
+return (0);
+>>>>>>> 5f5aa07669f2c08765a20582bd46531ff849c64b
 }
